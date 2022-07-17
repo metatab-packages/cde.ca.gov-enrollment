@@ -14,7 +14,7 @@ Version.Major,1
 Version.Minor,2
 Version.Patch,2
 Created,2019-08-12T18:11:23
-Modified,2022-06-17T17:11:20
+Modified,2022-06-17T17:34:52
 Giturl,https://github.com/metatab-packages/cde.ca.gov-enrollment.git
 ""
 Section,Contacts,Email,Organization,Url,
@@ -46,16 +46,16 @@ Section,Resources,Name,Description,,
 Datafile,notebooks/extract.ipynb#df,enrollment,"School enrollment, 2007 to 2021",,
 Datafile,notebooks/raceeth.ipynb#raceeth,race_eth,Simplified structure for race/ethnicity,,
 ""
-Section,Schema,DataType,Description,,
-Table,enrollment,,,,
-Table.Column,year,integer,File year of source data,,
+Section,Schema,DataType,Description,Has_Codes
+Table,enrollment,,,
+Table.Column,year,integer,File year of source data,
 Table.Column,cdscode,integer,"This 14-digit code is the official, unique identification of a school 
 within California. The first two digits identify the county, the next five 
 digits identify the school district, and the last seven digits identify the 
-school.",,
-Table.Column,county,string,County name.,,
-Table.Column,district,string,District name.,,
-Table.Column,school,text,School name.,,
+school.",
+Table.Column,county,string,County name.,
+Table.Column,district,string,District name.,
+Table.Column,school,text,School name.,
 Table.Column,ethnic,integer,"Racial/ethnic designation. This field is coded as follows:
 
    - Code 0 = Not reported
@@ -68,45 +68,59 @@ Table.Column,ethnic,integer,"Racial/ethnic designation. This field is coded as f
    - Code 7 = White, not Hispanic
    - Code 9 = Two or More Races, Not Hispanic
 
-(See Glossary for complete definitions of the ethnic groups.)",,
+(See Glossary for complete definitions of the ethnic groups.)",
 Table.Column,gender,string,"Gender. This field is a coded as follows:
 
    - M = Male
-   - F = Female",,
-Table.Column,kdgn,integer,Students enrolled in kindergarten.,,
-Table.Column,gr_1,integer,Students enrolled in grade one.,,
-Table.Column,gr_2,integer,Students enrolled in grade two.,,
-Table.Column,gr_3,integer,Students enrolled in grade three.,,
-Table.Column,gr_4,integer,Students enrolled in grade four.,,
-Table.Column,gr_5,integer,Students enrolled in grade five.,,
-Table.Column,gr_6,integer,Students enrolled in grade six.,,
-Table.Column,gr_7,integer,Students enrolled in grade seven.,,
-Table.Column,gr_8,integer,Students enrolled in grade eight.,,
+   - F = Female",
+Table.Column,kdgn,integer,Students enrolled in kindergarten.,
+Table.Column,gr_1,integer,Students enrolled in grade one.,
+Table.Column,gr_2,integer,Students enrolled in grade two.,
+Table.Column,gr_3,integer,Students enrolled in grade three.,
+Table.Column,gr_4,integer,Students enrolled in grade four.,
+Table.Column,gr_5,integer,Students enrolled in grade five.,
+Table.Column,gr_6,integer,Students enrolled in grade six.,
+Table.Column,gr_7,integer,Students enrolled in grade seven.,
+Table.Column,gr_8,integer,Students enrolled in grade eight.,
 Table.Column,ungr_elm,integer,"Students enrolled in ungraded elementary classes in grades kindergarten 
-through grade eight.",,
-Table.Column,gr_9,integer,Students enrolled in grade nine.,,
-Table.Column,gr_10,integer,Students enrolled in grade ten.,,
-Table.Column,gr_11,integer,Students enrolled in grade eleven.,,
-Table.Column,gr_12,integer,Students enrolled in grade twelve.,,
+through grade eight.",
+Table.Column,gr_9,integer,Students enrolled in grade nine.,
+Table.Column,gr_10,integer,Students enrolled in grade ten.,
+Table.Column,gr_11,integer,Students enrolled in grade eleven.,
+Table.Column,gr_12,integer,Students enrolled in grade twelve.,
 Table.Column,ungr_sec,integer,"Students enrolled in ungraded secondary classes in grades nine through 
-twelve.",,
+twelve.",
 Table.Column,enr_total,integer,"Total school enrollment for fields Kindergarten (KDGN) through grade twelve 
 (GR_12) plus ungraded elementary (UNGR_ELM) and ungraded secondary classes 
 (UNGR_SEC). Adults in kindergarten through grade twelve programs are not 
-included.",,
+included.",
 Table.Column,adult,integer,"Adults enrolled in kindergarten through grade twelve programs. This data 
-does not include adults in independent study.",,
-Table,race_eth_07_18,,,,
-Table.Column,cdscode,integer,"14 digit CDS code, which uniquely identifies schools",,
-Table.Column,year,integer,Year of enrollment data,,
-Table.Column,na,number,Race/Ethnicity not known.,,
-Table.Column,aian,number,"American Indian or Alaska Native, Not Hispanic",,
-Table.Column,asian,number,"Asian, Not Hispanic",,
-Table.Column,pi,number,"Pacific Islander, Not Hispanic",,
-Table.Column,filipino,number,"Filipino, Not Hispanic",,
-Table.Column,hisp,number,Hispanic or Latino,,
-Table.Column,black,number,"African American, not Hispanic",,
-Table.Column,nh_white,number,"White, not Hispanic",,
-Table.Column,unk,number,"Unknown code 8;Code 8 is ""Multiple or No Response"" in the 1998-2006 file structure, but is not defined for the post 2006 file structure.",,
-Table.Column,two_more,number,"Two or More Races, Not Hispanic",,
-Table.Column,total,number,Sum of all other columns,,
+does not include adults in independent study.",
+Table,race_eth_07_18,,,
+Table.Column,cdscode,integer,"14 digit CDS code, which uniquely identifies schools",
+Table.Column,year,integer,Year of enrollment data,
+Table.Column,na,number,Race/Ethnicity not known.,
+Table.Column,aian,number,"American Indian or Alaska Native, Not Hispanic",
+Table.Column,asian,number,"Asian, Not Hispanic",
+Table.Column,pi,number,"Pacific Islander, Not Hispanic",
+Table.Column,filipino,number,"Filipino, Not Hispanic",
+Table.Column,hisp,number,Hispanic or Latino,
+Table.Column,black,number,"African American, not Hispanic",
+Table.Column,nh_white,number,"White, not Hispanic",
+Table.Column,unk,number,"Unknown code 8;Code 8 is ""Multiple or No Response"" in the 1998-2006 file structure, but is not defined for the post 2006 file structure.",
+Table.Column,two_more,number,"Two or More Races, Not Hispanic",
+Table.Column,total,number,Sum of all other columns,
+Table,race_eth,,,
+Table.Column,cdscode,integer,,
+Table.Column,year,integer,,
+Table.Column,na,integer,,
+Table.Column,aian,integer,,
+Table.Column,asian,integer,,
+Table.Column,pi,integer,,
+Table.Column,filipino,integer,,
+Table.Column,hisp,integer,,
+Table.Column,black,integer,,
+Table.Column,nh_white,integer,,
+Table.Column,unk,integer,,
+Table.Column,two_more,integer,,
+Table.Column,total,integer,,
